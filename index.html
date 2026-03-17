@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星月学园异闻录</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="shell">
+        <header class="header">
+            <div>
+                <p class="eyebrow">群聊 / 机器人友好版</p>
+                <h1>星月学园异闻录</h1>
+                <p class="intro">这是一个纯文字、强随机、编号选择式的冒险游戏演示。后续接入 QQ 机器人时，直接复用同一套引擎即可。</p>
+            </div>
+            <button id="restartBtn" type="button">重新开局</button>
+        </header>
+
+        <section class="console">
+            <pre id="output"></pre>
+        </section>
+
+        <section class="input-bar">
+            <input id="choiceInput" type="text" inputmode="numeric" placeholder="输入 1 / 2 / 3 / 4">
+            <button id="submitBtn" type="button">发送选择</button>
+        </section>
+    </main>
+
+    <script src="engine-data.js"></script>
+    <script src="heroic-spirits.js"></script>
+    <script src="engine.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+:root {
+    --bg: #10131f;
+    --panel: #161b2b;
+    --panel-soft: #1d2438;
+    --text: #edf2ff;
+    --muted: #9faecc;
+    --line: #2a3553;
+    --accent: #8de1ff;
+    --accent-2: #ffd58c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background:
+        radial-gradient(circle at top, rgba(141, 225, 255, 0.12), transparent 24%),
+        linear-gradient(180deg, #0c0f18 0%, #131828 100%);
+    color: var(--text);
+}
+
+.shell {
+    width: min(960px, calc(100vw - 24px));
+    margin: 24px auto;
+    display: grid;
+    gap: 16px;
+}
+
+.header,
+.console,
+.input-bar {
+    border: 1px solid var(--line);
+    background: rgba(22, 27, 43, 0.94);
+    border-radius: 18px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent-2);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: clamp(32px, 6vw, 52px);
+}
+
+.intro {
+    margin: 0;
+    max-width: 680px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+#restartBtn,
+#submitBtn {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #1b2232;
+    font-weight: 700;
+}
+
+.console {
+    padding: 0;
+    overflow: hidden;
+}
+
+pre {
+    margin: 0;
+    min-height: 520px;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(17, 21, 33, 0.98), rgba(24, 30, 47, 0.98));
+    color: var(--text);
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.75;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.input-bar {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: var(--panel-soft);
+    color: var(--text);
+}
+
+input:focus {
+    outline: 1px solid var(--accent);
+}
+
+@media (max-width: 720px) {
+    .header,
+    .input-bar {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+
+    pre {
+        min-height: 420px;
+    }
+}
